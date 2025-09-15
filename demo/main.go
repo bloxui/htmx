@@ -7,6 +7,7 @@ import (
 
 	. "github.com/bloxui/blox"
 	"github.com/bloxui/htmx"
+	icons "github.com/bloxui/icons/lucide"
 )
 
 func main() {
@@ -34,7 +35,7 @@ func main() {
 				Meta(Charset("UTF-8")),
 				Meta(Name("viewport"), Content("width=device-width, initial-scale=1")),
 				Meta(Name("description"), Content("Interactive demo showcasing HTMX attributes with Blox's type-safe HTML generation in Go. Features embedded JavaScript, todo list, and real-time updates.")),
-				Style(T(`
+				HeadStyle(T(`
 					body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
 					.container { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
 					.btn { background: #0056b3; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin: 5px; }
@@ -48,10 +49,25 @@ func main() {
 					.todo-item { padding: 10px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
 					.htmx-indicator { display: none; }
 					.htmx-request .htmx-indicator { display: inline; }
+					/* Icon size utilities */
+					.size-3 { width: 12px; height: 12px; }
+					.size-4 { width: 16px; height: 16px; }
+					.size-5 { width: 20px; height: 20px; }
+					.size-6 { width: 24px; height: 24px; }
+					.size-8 { width: 32px; height: 32px; }
+					/* Icon alignment */
+					svg { vertical-align: middle; }
+					h1, h2, h3, h4, h5, h6 { display: flex; align-items: center; line-height: 1.2; }
+					h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg { flex-shrink: 0; }
+					p { display: flex; align-items: center; }
+					.btn { display: inline-flex; align-items: center; }
 				`)),
 			),
 			Body(
-				H1(T("HTMX + Blox Integration Demo")),
+				H1(
+					icons.Zap(Class("size-8"), Style("margin-right", "10px")),
+					T("HTMX + Blox Integration Demo"),
+				),
 				P(T("This demo showcases HTMX attributes working with Blox's type-safe HTML generation, using embedded JavaScript (no CDN required).")),
 
 				Main(
@@ -59,31 +75,46 @@ func main() {
 					Div(
 						Id("content"),
 						Class("container"),
-						H2(T("Dynamic Content Area")),
+						H2(
+							icons.Monitor(Class("size-6"), Style("margin-right", "8px")),
+							T("Dynamic Content Area"),
+						),
 						P(T("Click the button below to load content dynamically.")),
 					),
 
 					// Load content button
 					Button(
+						icons.Download(Class("size-4"), Style("margin-right", "6px")),
 						T("Load Content"),
 						htmx.HxGet("/api/content"),
 						htmx.HxTarget("#content"),
 						htmx.HxSwap("innerHTML"),
 						Class("btn"),
+						Style("display", "inline-flex"),
+						Style("align-items", "center"),
 					),
 
 					// Todo section
-					H2(T("Todo List Demo")),
-					Div(Id("todo-list"), Class("todo-container")),
+					H2(
+						icons.ListTodo(Class("size-6"), Style("margin-right", "8px")),
+						T("Todo List Demo"),
+					),
+					Div(
+						Id("todo-list"),
+						Class("todo-container"),
+						htmx.HxGet("/api/todos"),
+						htmx.HxTrigger("load"),
+						htmx.HxSwap("innerHTML"),
+					),
 
 					// Todo form
 					Form(
 						htmx.HxPost("/api/todos"),
 						htmx.HxTarget("#todo-list"),
 						htmx.HxSwap("beforeend"),
-						StyleKV("display", "flex"),
-						StyleKV("gap", "10px"),
-						StyleKV("margin", "10px 0"),
+						Style("display", "flex"),
+						Style("gap", "10px"),
+						Style("margin", "10px 0"),
 
 						Input(
 							InputType("text"),
@@ -91,29 +122,38 @@ func main() {
 							Placeholder("Add a todo..."),
 							Required(),
 							Class("form-input"),
-							StyleKV("flex", "1"),
+							Style("flex", "1"),
 						),
 
 						Button(
 							ButtonType("submit"),
+							icons.Plus(Class("size-4"), Style("margin-right", "6px")),
 							T("Add Todo"),
 							Class("btn btn-success"),
+							Style("display", "inline-flex"),
+							Style("align-items", "center"),
 						),
 					),
 
 					// Clear all button
 					Button(
+						icons.Trash2(Class("size-4"), Style("margin-right", "6px")),
 						T("Clear All"),
 						htmx.HxDelete("/api/todos"),
 						htmx.HxTarget("#todo-list"),
 						htmx.HxConfirm("Delete all todos?"),
 						htmx.HxSwap("innerHTML"),
 						Class("btn btn-danger"),
-						StyleKV("margin-top", "10px"),
+						Style("margin-top", "10px"),
+						Style("display", "inline-flex"),
+						Style("align-items", "center"),
 					),
 
 					// Auto-refresh demo
-					H2(T("Auto-refresh Demo")),
+					H2(
+						icons.RefreshCw(Class("size-6"), Style("margin-right", "8px")),
+						T("Auto-refresh Demo"),
+					),
 					Div(
 						Id("live-time"),
 						htmx.HxGet("/api/time"),
@@ -137,15 +177,21 @@ func main() {
 	// API endpoints
 	http.HandleFunc("/api/content", func(w http.ResponseWriter, r *http.Request) {
 		response := Div(
-			H2(T("✨ Content Loaded Successfully!")),
+			H2(
+				icons.CircleCheck(Class("size-6"), Style("margin-right", "8px"), Style("color", "#10b981")),
+				T("Content Loaded Successfully!"),
+			),
 			P(T("This content was loaded dynamically using HTMX and rendered with Blox.")),
 			P(T("The HTMX JavaScript is served directly from the Go application using embedded files.")),
 			Button(
+				icons.ArrowRight(Class("size-4"), Style("margin-right", "6px")),
 				T("Load More Content"),
 				htmx.HxGet("/api/more"),
 				htmx.HxTarget("#content"),
 				htmx.HxSwap("innerHTML"),
 				Class("btn"),
+				Style("display", "inline-flex"),
+				Style("align-items", "center"),
 			),
 		)
 		_, _ = fmt.Fprint(w, Render(response))
@@ -153,59 +199,140 @@ func main() {
 
 	http.HandleFunc("/api/more", func(w http.ResponseWriter, r *http.Request) {
 		response := Div(
-			H2(T("🚀 Even More Content!")),
+			H2(
+				icons.Rocket(Class("size-6"), Style("margin-right", "8px"), Style("color", "#f59e0b")),
+				T("Even More Content!"),
+			),
 			P(T("This demonstrates nested HTMX requests working seamlessly.")),
 			Ul(
-				Li(T("Type-safe HTML with compile-time validation")),
-				Li(T("Zero runtime overhead")),
-				Li(T("Embedded JavaScript assets")),
-				Li(T("Perfect integration with HTMX")),
+				Li(
+					icons.Shield(Class("size-4"), Style("margin-right", "6px"), Style("color", "#10b981")),
+					T("Type-safe HTML with compile-time validation"),
+				),
+				Li(
+					icons.Zap(Class("size-4"), Style("margin-right", "6px"), Style("color", "#f59e0b")),
+					T("Zero runtime overhead"),
+				),
+				Li(
+					icons.Package(Class("size-4"), Style("margin-right", "6px"), Style("color", "#3b82f6")),
+					T("Embedded JavaScript assets"),
+				),
+				Li(
+					icons.Heart(Class("size-4"), Style("margin-right", "6px"), Style("color", "#ef4444")),
+					T("Perfect integration with HTMX"),
+				),
 			),
 		)
 		_, _ = fmt.Fprint(w, Render(response))
 	})
 
-	todoCounter := 0
+	// In-memory todo storage
+	type Todo struct {
+		ID   int
+		Text string
+	}
+
+	var todos []Todo
+	var todoCounter int
+
 	http.HandleFunc("/api/todos", func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
+		case "GET":
+			// Return all todos
+			var todoArgs []DivArg
+			for _, todo := range todos {
+				todoItem := Div(
+					Class("todo-item"),
+					Span(
+						icons.Circle(Class("size-4"), Style("margin-right", "8px"), Style("color", "#6b7280")),
+						T(fmt.Sprintf("%d. %s", todo.ID, todo.Text)),
+					),
+					Button(
+						icons.X(Class("size-3"), Style("margin-right", "4px")),
+						T("Delete"),
+						htmx.HxDelete(fmt.Sprintf("/api/todos/%d", todo.ID)),
+						htmx.HxTarget("closest .todo-item"),
+						htmx.HxSwap("outerHTML"),
+						Class("btn btn-danger"),
+						Style("font-size", "12px"),
+						Style("padding", "4px 8px"),
+						Style("display", "inline-flex"),
+						Style("align-items", "center"),
+					),
+				)
+				todoArgs = append(todoArgs, Child(todoItem))
+			}
+			response := Div(todoArgs...)
+			_, _ = fmt.Fprint(w, Render(response))
+
 		case "POST":
 			todoText := r.FormValue("todo")
 			if todoText != "" {
 				todoCounter++
+				newTodo := Todo{ID: todoCounter, Text: todoText}
+				todos = append(todos, newTodo)
+
 				response := Div(
 					Class("todo-item"),
-					Span(T(fmt.Sprintf("%d. %s", todoCounter, todoText))),
+					Span(
+						icons.Circle(Class("size-4"), Style("margin-right", "8px"), Style("color", "#6b7280")),
+						T(fmt.Sprintf("%d. %s", newTodo.ID, newTodo.Text)),
+					),
 					Button(
+						icons.X(Class("size-3"), Style("margin-right", "4px")),
 						T("Delete"),
-						htmx.HxDelete(fmt.Sprintf("/api/todos/%d", todoCounter)),
+						htmx.HxDelete(fmt.Sprintf("/api/todos/%d", newTodo.ID)),
 						htmx.HxTarget("closest .todo-item"),
 						htmx.HxSwap("outerHTML"),
 						Class("btn btn-danger"),
-						StyleKV("font-size", "12px"),
-						StyleKV("padding", "4px 8px"),
+						Style("font-size", "12px"),
+						Style("padding", "4px 8px"),
+						Style("display", "inline-flex"),
+						Style("align-items", "center"),
 					),
 				)
 				_, _ = fmt.Fprint(w, Render(response))
 			}
 		case "DELETE":
 			// Clear all todos
+			todos = []Todo{}
 			_, _ = fmt.Fprint(w, "")
 		}
 	})
 
 	http.HandleFunc("/api/todos/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "DELETE" {
-			// Delete individual todo (return empty to remove element)
+			// Extract todo ID from URL path
+			path := r.URL.Path
+			if len(path) > len("/api/todos/") {
+				idStr := path[len("/api/todos/"):]
+				var id int
+				if _, err := fmt.Sscanf(idStr, "%d", &id); err == nil {
+					// Remove todo from slice
+					for i, todo := range todos {
+						if todo.ID == id {
+							todos = append(todos[:i], todos[i+1:]...)
+							break
+						}
+					}
+				}
+			}
+			// Return empty to remove element from DOM
 			_, _ = fmt.Fprint(w, "")
 		}
 	})
 
 	http.HandleFunc("/api/time", func(w http.ResponseWriter, r *http.Request) {
 		response := Div(
-			Strong(T("Current Time: ")),
-			T(time.Now().Format("2006-01-02 15:04:05")),
-			Br(),
-			T("This updates every 2 seconds automatically!"),
+			P(
+				icons.Clock(Class("size-5"), Style("margin-right", "8px"), Style("color", "#3b82f6")),
+				Strong(T("Current Time: ")),
+				T(time.Now().Format("2006-01-02 15:04:05")),
+			),
+			P(
+				icons.RotateCcw(Class("size-4"), Style("margin-right", "6px"), Style("color", "#10b981")),
+				T("This updates every 2 seconds automatically!"),
+			),
 		)
 		_, _ = fmt.Fprint(w, Render(response))
 	})

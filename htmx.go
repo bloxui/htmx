@@ -206,10 +206,11 @@ func HxDisinherit(attrs string) blox.Global {
 // without requiring external CDN dependencies.
 //
 // Example usage:
-//   http.HandleFunc("/js/htmx.min.js", func(w http.ResponseWriter, r *http.Request) {
-//       w.Header().Set("Content-Type", "application/javascript")
-//       w.Write(htmx.JavaScript())
-//   })
+//
+//	http.HandleFunc("/js/htmx.min.js", func(w http.ResponseWriter, r *http.Request) {
+//	    w.Header().Set("Content-Type", "application/javascript")
+//	    w.Write(htmx.JavaScript())
+//	})
 func JavaScript() []byte {
 	return js.HtmxMinJS
 }

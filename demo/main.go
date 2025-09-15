@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	. "github.com/plainkit/blox"
+	. "github.com/plainkit/html"
 	"github.com/plainkit/htmx"
 	icons "github.com/plainkit/icons/lucide"
 )

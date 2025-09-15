@@ -5,7 +5,7 @@ Type-safe HTMX attributes for the Plain component library.
 ## Installation
 
 ```bash
-go get github.com/plainkit/blox
+go get github.com/plainkit/html
 go get github.com/plainkit/htmx
 ```
 
@@ -16,7 +16,7 @@ package main
 
 import (
     "fmt"
-    x "github.com/plainkit/blox"
+    x "github.com/plainkit/html"
     "github.com/plainkit/htmx"
 )
 

@@ -1,0 +1,10 @@
+github.com/bloxui/blox v0.4.0 h1:5U4Uq9ozdbKylam8pbFRk23LEf9PXvJ9f5W9DgxPKa4=
+github.com/bloxui/blox v0.4.0/go.mod h1:9kxb/w1tsccZFHG+9kW/EAWfYmDZDfCpgRte0bl4vb4=
+github.com/bloxui/htmx v0.1.0 h1:1jhDsWXY3LjpKDq8R5KORK2Y2tulMsNnQ6p9eP2Ial8=
+github.com/bloxui/htmx v0.1.0/go.mod h1:B0Qz+aVn3LZo+arfTJ17W0aK9unGHDctUyZj79A20NM=
+github.com/bloxui/icons v0.6.0 h1:8jrgu1iHHZIgedPpNM6IQriFAlIYNFJaZDqtPEw+yuE=
+github.com/bloxui/icons v0.6.0/go.mod h1:OLB+zthdOMMmdrce+epH6EVPF4GdOqlRlh+28tXEn7g=
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/stretchr/testify v1.11.1 h1:7s2iGBzp5EwR7/aIZr8ao5+dra3wiQyKjjFuvgVKu7U=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=

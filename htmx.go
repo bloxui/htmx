@@ -2,8 +2,8 @@
 package htmx
 
 import (
-	"github.com/bloxui/blox"
-	"github.com/bloxui/htmx/js"
+	"github.com/plainkit/blox"
+	"github.com/plainkit/htmx/js"
 )
 
 // Core HTMX HTTP methods

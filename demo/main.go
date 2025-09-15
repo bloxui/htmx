@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	. "github.com/bloxui/blox"
-	"github.com/bloxui/htmx"
-	icons "github.com/bloxui/icons/lucide"
+	. "github.com/plainkit/blox"
+	"github.com/plainkit/htmx"
+	icons "github.com/plainkit/icons/lucide"
 )
 
 func main() {

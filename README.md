@@ -5,8 +5,8 @@ Type-safe HTMX attributes for the Blox HTML component library.
 ## Installation
 
 ```bash
-go get github.com/bloxui/blox
-go get github.com/bloxui/htmx
+go get github.com/plainkit/blox
+go get github.com/plainkit/htmx
 ```
 
 ## Quick Start
@@ -16,8 +16,8 @@ package main
 
 import (
     "fmt"
-    x "github.com/bloxui/blox"
-    "github.com/bloxui/htmx"
+    x "github.com/plainkit/blox"
+    "github.com/plainkit/htmx"
 )
 
 func main() {

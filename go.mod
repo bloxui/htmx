@@ -1,5 +1,5 @@
-module github.com/bloxui/htmx
+module github.com/plainkit/htmx
 
 go 1.18
 
-require github.com/bloxui/blox v0.4.0
+require github.com/plainkit/blox v0.5.0

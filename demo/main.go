@@ -30,11 +30,11 @@ func main() {
 		page := Html(
 			Lang("en"),
 			Head(
-				HeadTitle(Text("HTMX + Blox Demo")),
+				HeadTitle(T("HTMX + Blox Demo")),
 				Meta(Charset("UTF-8")),
 				Meta(Name("viewport"), Content("width=device-width, initial-scale=1")),
 				Meta(Name("description"), Content("Interactive demo showcasing HTMX attributes with Blox's type-safe HTML generation in Go. Features embedded JavaScript, todo list, and real-time updates.")),
-				Style(Text(`
+				Style(T(`
 					body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
 					.container { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
 					.btn { background: #0056b3; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin: 5px; }
@@ -51,21 +51,21 @@ func main() {
 				`)),
 			),
 			Body(
-				H1(Text("HTMX + Blox Integration Demo")),
-				P(Text("This demo showcases HTMX attributes working with Blox's type-safe HTML generation, using embedded JavaScript (no CDN required).")),
+				H1(T("HTMX + Blox Integration Demo")),
+				P(T("This demo showcases HTMX attributes working with Blox's type-safe HTML generation, using embedded JavaScript (no CDN required).")),
 
 				Main(
 					// Content area
 					Div(
 						Id("content"),
 						Class("container"),
-						H2(Text("Dynamic Content Area")),
-						P(Text("Click the button below to load content dynamically.")),
+						H2(T("Dynamic Content Area")),
+						P(T("Click the button below to load content dynamically.")),
 					),
 
 					// Load content button
 					Button(
-						Text("Load Content"),
+						T("Load Content"),
 						htmx.HxGet("/api/content"),
 						htmx.HxTarget("#content"),
 						htmx.HxSwap("innerHTML"),
@@ -73,7 +73,7 @@ func main() {
 					),
 
 					// Todo section
-					H2(Text("Todo List Demo")),
+					H2(T("Todo List Demo")),
 					Div(Id("todo-list"), Class("todo-container")),
 
 					// Todo form
@@ -96,14 +96,14 @@ func main() {
 
 						Button(
 							ButtonType("submit"),
-							Text("Add Todo"),
+							T("Add Todo"),
 							Class("btn btn-success"),
 						),
 					),
 
 					// Clear all button
 					Button(
-						Text("Clear All"),
+						T("Clear All"),
 						htmx.HxDelete("/api/todos"),
 						htmx.HxTarget("#todo-list"),
 						htmx.HxConfirm("Delete all todos?"),
@@ -113,14 +113,14 @@ func main() {
 					),
 
 					// Auto-refresh demo
-					H2(Text("Auto-refresh Demo")),
+					H2(T("Auto-refresh Demo")),
 					Div(
 						Id("live-time"),
 						htmx.HxGet("/api/time"),
 						htmx.HxTrigger("every 2s"),
 						htmx.HxSwap("innerHTML"),
 						Class("container"),
-						Text("Loading time..."),
+						T("Loading time..."),
 					),
 				),
 
@@ -137,11 +137,11 @@ func main() {
 	// API endpoints
 	http.HandleFunc("/api/content", func(w http.ResponseWriter, r *http.Request) {
 		response := Div(
-			H2(Text("✨ Content Loaded Successfully!")),
-			P(Text("This content was loaded dynamically using HTMX and rendered with Blox.")),
-			P(Text("The HTMX JavaScript is served directly from the Go application using embedded files.")),
+			H2(T("✨ Content Loaded Successfully!")),
+			P(T("This content was loaded dynamically using HTMX and rendered with Blox.")),
+			P(T("The HTMX JavaScript is served directly from the Go application using embedded files.")),
 			Button(
-				Text("Load More Content"),
+				T("Load More Content"),
 				htmx.HxGet("/api/more"),
 				htmx.HxTarget("#content"),
 				htmx.HxSwap("innerHTML"),
@@ -153,13 +153,13 @@ func main() {
 
 	http.HandleFunc("/api/more", func(w http.ResponseWriter, r *http.Request) {
 		response := Div(
-			H2(Text("🚀 Even More Content!")),
-			P(Text("This demonstrates nested HTMX requests working seamlessly.")),
+			H2(T("🚀 Even More Content!")),
+			P(T("This demonstrates nested HTMX requests working seamlessly.")),
 			Ul(
-				Li(Text("Type-safe HTML with compile-time validation")),
-				Li(Text("Zero runtime overhead")),
-				Li(Text("Embedded JavaScript assets")),
-				Li(Text("Perfect integration with HTMX")),
+				Li(T("Type-safe HTML with compile-time validation")),
+				Li(T("Zero runtime overhead")),
+				Li(T("Embedded JavaScript assets")),
+				Li(T("Perfect integration with HTMX")),
 			),
 		)
 		_, _ = fmt.Fprint(w, Render(response))
@@ -174,9 +174,9 @@ func main() {
 				todoCounter++
 				response := Div(
 					Class("todo-item"),
-					Span(Text(fmt.Sprintf("%d. %s", todoCounter, todoText))),
+					Span(T(fmt.Sprintf("%d. %s", todoCounter, todoText))),
 					Button(
-						Text("Delete"),
+						T("Delete"),
 						htmx.HxDelete(fmt.Sprintf("/api/todos/%d", todoCounter)),
 						htmx.HxTarget("closest .todo-item"),
 						htmx.HxSwap("outerHTML"),
@@ -202,10 +202,10 @@ func main() {
 
 	http.HandleFunc("/api/time", func(w http.ResponseWriter, r *http.Request) {
 		response := Div(
-			Strong(Text("Current Time: ")),
-			Text(time.Now().Format("2006-01-02 15:04:05")),
+			Strong(T("Current Time: ")),
+			T(time.Now().Format("2006-01-02 15:04:05")),
 			Br(),
-			Text("This updates every 2 seconds automatically!"),
+			T("This updates every 2 seconds automatically!"),
 		)
 		_, _ = fmt.Fprint(w, Render(response))
 	})

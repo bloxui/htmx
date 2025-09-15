@@ -1,6 +1,6 @@
-# HTMX for Blox
+# HTMX for Plain
 
-Type-safe HTMX attributes for the Blox HTML component library.
+Type-safe HTMX attributes for the Plain component library.
 
 ## Installation
 
@@ -139,7 +139,7 @@ func todoApp() x.Component {
 
 ## Type Safety
 
-All HTMX attributes are type-safe and work with Blox's compile-time validation:
+All HTMX attributes are type-safe and work with Plain's compile-time validation:
 
 ```go
 // This works

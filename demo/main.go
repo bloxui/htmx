@@ -31,10 +31,10 @@ func main() {
 		page := Html(
 			Lang("en"),
 			Head(
-				HeadTitle(T("HTMX + Blox Demo")),
+				HeadTitle(T("HTMX + Plain Demo")),
 				Meta(Charset("UTF-8")),
 				Meta(Name("viewport"), Content("width=device-width, initial-scale=1")),
-				Meta(Name("description"), Content("Interactive demo showcasing HTMX attributes with Blox's type-safe HTML generation in Go. Features embedded JavaScript, todo list, and real-time updates.")),
+				Meta(Name("description"), Content("Interactive demo showcasing HTMX attributes with Plain's type-safe HTML generation in Go. Features embedded JavaScript, todo list, and real-time updates.")),
 				HeadStyle(T(`
 					body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
 					.container { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
@@ -66,9 +66,9 @@ func main() {
 			Body(
 				H1(
 					icons.Zap(Class("size-8"), Style("margin-right", "10px")),
-					T("HTMX + Blox Integration Demo"),
+					T("HTMX + Plain Integration Demo"),
 				),
-				P(T("This demo showcases HTMX attributes working with Blox's type-safe HTML generation, using embedded JavaScript (no CDN required).")),
+				P(T("This demo showcases HTMX attributes working with Plain's type-safe HTML generation, using embedded JavaScript (no CDN required).")),
 
 				Main(
 					// Content area
@@ -181,7 +181,7 @@ func main() {
 				icons.CircleCheck(Class("size-6"), Style("margin-right", "8px"), Style("color", "#10b981")),
 				T("Content Loaded Successfully!"),
 			),
-			P(T("This content was loaded dynamically using HTMX and rendered with Blox.")),
+			P(T("This content was loaded dynamically using HTMX and rendered with Plain.")),
 			P(T("The HTMX JavaScript is served directly from the Go application using embedded files.")),
 			Button(
 				icons.ArrowRight(Class("size-4"), Style("margin-right", "6px")),
@@ -337,7 +337,7 @@ func main() {
 		_, _ = fmt.Fprint(w, Render(response))
 	})
 
-	fmt.Println("🚀 HTMX + Blox Demo Server starting on :8080")
+	fmt.Println("🚀 HTMX + Plain Demo Server starting on :8080")
 	fmt.Println("📦 Using embedded HTMX JavaScript (no CDN required)")
 	fmt.Println("🔗 Open http://localhost:8080 to view the demo")
 

@@ -1,4 +1,4 @@
-// Package htmx provides HTMX attribute functions for the Blox HTML component library.
+// Package htmx provides HTMX attribute functions for the Plain component library.
 package htmx
 
 import (

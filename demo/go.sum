@@ -1,14 +1,8 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
-github.com/plainkit/blox v0.5.0 h1:BfjoUlpf8rp7Ql7gyKGP8cAXMt9gRXD0GcuWrkBQfjE=
-github.com/plainkit/blox v0.5.0/go.mod h1:jtnshfjOcQv7R+vyrj0jOrxLndUlQACW1R3DnNp9Mp8=
-github.com/plainkit/html v0.6.0 h1:bBslOROXL7FONsDPN+BUO+5BTKNClFhgMkekyT471z8=
-github.com/plainkit/html v0.6.0/go.mod h1:63DVpcbAvlLsDEzubaPzrzu3QHgTC43f0JShOt9/32s=
 github.com/plainkit/html v0.9.0 h1:QsFDzjfvmd9O2Uw7BK3PZTfIV+Tw3hsLDBvebuCHr8c=
 github.com/plainkit/html v0.9.0/go.mod h1:63DVpcbAvlLsDEzubaPzrzu3QHgTC43f0JShOt9/32s=
-github.com/plainkit/htmx v0.3.0 h1:2yJTNjxkMc5f58lkcGZ0jh8sOnqtEMskG+qe/apQwhw=
-github.com/plainkit/htmx v0.3.0/go.mod h1:bL+59iyDJoMJ1S2dUcDKC9btiWHGunMiYiZ1p3rjRos=
-github.com/plainkit/htmx v0.4.0 h1:o6THyzvoOEzglsbyxY5k6CWFhvqHdT+iraWUP0kVZFk=
-github.com/plainkit/htmx v0.4.0/go.mod h1:ToYo0RxqfMiyCeXNayQRm28BU8aH6BAmw4DwgKUEbTE=
+github.com/plainkit/htmx v0.5.0 h1:GgGqfiIs6qX2uoiRed78o/6xft7OaSnGVOsT6tOrNUM=
+github.com/plainkit/htmx v0.5.0/go.mod h1:/c4ay9OPo6L1EnPLGrK+5C6lQjCypsEVwJtD2pttaSU=
 github.com/plainkit/icons v0.8.0 h1:yuEwXx1ATCMHagaWKMHX0737fxaiZPQNwZGzfTqgaV0=
 github.com/plainkit/icons v0.8.0/go.mod h1:oDgAWGSHxSAfKznqSjkCxPfrjtzUlcT8G0NluLQdEK8=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

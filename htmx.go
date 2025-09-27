@@ -10,45 +10,45 @@ import (
 
 // HxGet sets the hx-get attribute for HTMX GET requests.
 func HxGet(url string) html.Global {
-	return html.Custom("hx-get", url)
+	return html.ACustom("hx-get", url)
 }
 
 // HxPost sets the hx-post attribute for HTMX POST requests.
 func HxPost(url string) html.Global {
-	return html.Custom("hx-post", url)
+	return html.ACustom("hx-post", url)
 }
 
 // HxPut sets the hx-put attribute for HTMX PUT requests.
 func HxPut(url string) html.Global {
-	return html.Custom("hx-put", url)
+	return html.ACustom("hx-put", url)
 }
 
 // HxDelete sets the hx-delete attribute for HTMX DELETE requests.
 func HxDelete(url string) html.Global {
-	return html.Custom("hx-delete", url)
+	return html.ACustom("hx-delete", url)
 }
 
 // HxPatch sets the hx-patch attribute for HTMX PATCH requests.
 func HxPatch(url string) html.Global {
-	return html.Custom("hx-patch", url)
+	return html.ACustom("hx-patch", url)
 }
 
 // Targeting and content manipulation
 
 // HxTarget sets the hx-target attribute to specify where to place the response.
 func HxTarget(selector string) html.Global {
-	return html.Custom("hx-target", selector)
+	return html.ACustom("hx-target", selector)
 }
 
 // HxSwap sets the hx-swap attribute to specify how the response will be swapped in.
 // Common values: "innerHTML", "outerHTML", "beforebegin", "afterbegin", "beforeend", "afterend", "delete", "none"
 func HxSwap(strategy string) html.Global {
-	return html.Custom("hx-swap", strategy)
+	return html.ACustom("hx-swap", strategy)
 }
 
 // HxSwapOob sets the hx-swap-oob attribute for out-of-band swaps.
 func HxSwapOob(value string) html.Global {
-	return html.Custom("hx-swap-oob", value)
+	return html.ACustom("hx-swap-oob", value)
 }
 
 // Event handling
@@ -56,19 +56,19 @@ func HxSwapOob(value string) html.Global {
 // HxTrigger sets the hx-trigger attribute to specify what triggers the request.
 // Examples: "click", "submit", "change", "load", "revealed", "intersect"
 func HxTrigger(event string) html.Global {
-	return html.Custom("hx-trigger", event)
+	return html.ACustom("hx-trigger", event)
 }
 
 // Loading states and indicators
 
 // HxIndicator sets the hx-indicator attribute to show/hide loading indicators.
 func HxIndicator(selector string) html.Global {
-	return html.Custom("hx-indicator", selector)
+	return html.ACustom("hx-indicator", selector)
 }
 
 // HxDisabledElt sets the hx-disabled-elt attribute to disable elements during requests.
 func HxDisabledElt(selector string) html.Global {
-	return html.Custom("hx-disabled-elt", selector)
+	return html.ACustom("hx-disabled-elt", selector)
 }
 
 // Request configuration
@@ -76,24 +76,24 @@ func HxDisabledElt(selector string) html.Global {
 // HxHeaders sets the hx-headers attribute to send additional headers.
 // Value should be a JSON object as string, e.g., `{"X-Custom": "value"}`
 func HxHeaders(headers string) html.Global {
-	return html.Custom("hx-headers", headers)
+	return html.ACustom("hx-headers", headers)
 }
 
 // HxVals sets the hx-vals attribute to include additional values in the request.
 // Value should be a JSON object as string, e.g., `{"key": "value"}`
 func HxVals(vals string) html.Global {
-	return html.Custom("hx-vals", vals)
+	return html.ACustom("hx-vals", vals)
 }
 
 // HxInclude sets the hx-include attribute to include additional form elements.
 func HxInclude(selector string) html.Global {
-	return html.Custom("hx-include", selector)
+	return html.ACustom("hx-include", selector)
 }
 
 // HxParams sets the hx-params attribute to filter which parameters to include.
 // Values: "all", "none", or comma-separated list of parameter names
 func HxParams(params string) html.Global {
-	return html.Custom("hx-params", params)
+	return html.ACustom("hx-params", params)
 }
 
 // Navigation and history
@@ -101,32 +101,32 @@ func HxParams(params string) html.Global {
 // HxBoost sets the hx-boost attribute to progressively enhance links and forms.
 func HxBoost(enabled bool) html.Global {
 	if enabled {
-		return html.Custom("hx-boost", "true")
+		return html.ACustom("hx-boost", "true")
 	}
-	return html.Custom("hx-boost", "false")
+	return html.ACustom("hx-boost", "false")
 }
 
 // HxPushUrl sets the hx-push-url attribute to update the browser URL.
 // Use "true" to push the request URL, "false" to prevent, or a custom URL string.
 func HxPushUrl(url string) html.Global {
-	return html.Custom("hx-push-url", url)
+	return html.ACustom("hx-push-url", url)
 }
 
 // HxReplaceUrl sets the hx-replace-url attribute to replace the current browser URL.
 func HxReplaceUrl(url string) html.Global {
-	return html.Custom("hx-replace-url", url)
+	return html.ACustom("hx-replace-url", url)
 }
 
 // User interaction
 
 // HxConfirm sets the hx-confirm attribute to show a confirmation dialog.
 func HxConfirm(message string) html.Global {
-	return html.Custom("hx-confirm", message)
+	return html.ACustom("hx-confirm", message)
 }
 
 // HxPrompt sets the hx-prompt attribute to show a prompt dialog.
 func HxPrompt(message string) html.Global {
-	return html.Custom("hx-prompt", message)
+	return html.ACustom("hx-prompt", message)
 }
 
 // Advanced features
@@ -134,17 +134,17 @@ func HxPrompt(message string) html.Global {
 // HxExt sets the hx-ext attribute to enable HTMX extensions.
 // Examples: "json-enc", "morphdom", "alpine-morph", "response-targets"
 func HxExt(extensions string) html.Global {
-	return html.Custom("hx-ext", extensions)
+	return html.ACustom("hx-ext", extensions)
 }
 
 // HxSelect sets the hx-select attribute to select a subset of the response.
 func HxSelect(selector string) html.Global {
-	return html.Custom("hx-select", selector)
+	return html.ACustom("hx-select", selector)
 }
 
 // HxSelectOob sets the hx-select-oob attribute for out-of-band content selection.
 func HxSelectOob(selector string) html.Global {
-	return html.Custom("hx-select-oob", selector)
+	return html.ACustom("hx-select-oob", selector)
 }
 
 // Synchronization
@@ -152,7 +152,7 @@ func HxSelectOob(selector string) html.Global {
 // HxSync sets the hx-sync attribute to control request synchronization.
 // Examples: "drop", "abort", "replace", "queue"
 func HxSync(strategy string) html.Global {
-	return html.Custom("hx-sync", strategy)
+	return html.ACustom("hx-sync", strategy)
 }
 
 // Form handling
@@ -160,14 +160,14 @@ func HxSync(strategy string) html.Global {
 // HxEncoding sets the hx-encoding attribute to specify form encoding.
 // Common value: "multipart/form-data"
 func HxEncoding(encoding string) html.Global {
-	return html.Custom("hx-encoding", encoding)
+	return html.ACustom("hx-encoding", encoding)
 }
 
 // Error handling and validation
 
 // HxValidate sets the hx-validate attribute to force validation before submission.
 func HxValidate() html.Global {
-	return html.Custom("hx-validate", "true")
+	return html.ACustom("hx-validate", "true")
 }
 
 // Server-sent events
@@ -175,7 +175,7 @@ func HxValidate() html.Global {
 // HxSse sets the hx-sse attribute to connect to a server-sent events source.
 // Example: "connect:/events"
 func HxSse(value string) html.Global {
-	return html.Custom("hx-sse", value)
+	return html.ACustom("hx-sse", value)
 }
 
 // WebSockets
@@ -183,14 +183,14 @@ func HxSse(value string) html.Global {
 // HxWs sets the hx-ws attribute to connect to a WebSocket.
 // Example: "connect:/ws"
 func HxWs(value string) html.Global {
-	return html.Custom("hx-ws", value)
+	return html.ACustom("hx-ws", value)
 }
 
 // Preservation
 
 // HxPreserve sets the hx-preserve attribute to preserve elements during swaps.
 func HxPreserve() html.Global {
-	return html.Custom("hx-preserve", "true")
+	return html.ACustom("hx-preserve", "true")
 }
 
 // Disinheritance (preventing inheritance of HTMX attributes)
@@ -198,7 +198,7 @@ func HxPreserve() html.Global {
 // HxDisinherit sets the hx-disinherit attribute to prevent inheritance of specific attributes.
 // Examples: "*", "hx-target hx-get", "hx-*"
 func HxDisinherit(attrs string) html.Global {
-	return html.Custom("hx-disinherit", attrs)
+	return html.ACustom("hx-disinherit", attrs)
 }
 
 // JavaScript returns the embedded HTMX JavaScript content.

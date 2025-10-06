@@ -1,9 +1,11 @@
 module demo
 
-go 1.18
+go 1.21.5
 
 require (
-	github.com/plainkit/html v0.18.0
-	github.com/plainkit/htmx v0.7.0
-	github.com/plainkit/icons v0.10.0
+	github.com/plainkit/html v0.21.0
+	github.com/plainkit/htmx v0.8.0
+	github.com/plainkit/icons v0.13.0
 )
+
+require github.com/Oudwins/tailwind-merge-go v0.2.1 // indirect

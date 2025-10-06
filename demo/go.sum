@@ -4,8 +4,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/plainkit/html v0.21.0 h1:TzgRiuX+PqAEt6RmaT8aZy7Zql487iWLWKvuk5tKbnM=
 github.com/plainkit/html v0.21.0/go.mod h1:DNSes45N6gz60p5jOubdsVZAwFeCl/KibO0S9fznmJg=
-github.com/plainkit/htmx v0.8.0 h1:XHAA9HcDRtR26xQLviKzorbDXQxLv1+J6Zvt353Gt08=
-github.com/plainkit/htmx v0.8.0/go.mod h1:grE2O0gQ/GZOamblbPuxZz48LYEUJmMj1na1Uh6eNms=
+github.com/plainkit/htmx v0.9.0 h1:GNAsoIPOww+8CzJVVVYY/U6fM7hIjdoR1mIqlCRYqwY=
+github.com/plainkit/htmx v0.9.0/go.mod h1:6holjpr01jrqZW0k9o81Q3S4IV+uT2Ie9Zrh8x6ic2k=
 github.com/plainkit/icons v0.13.0 h1:QWot1CAmpLippuhxpZnMZ4pqjFouiFhKv7uCJgaG/hY=
 github.com/plainkit/icons v0.13.0/go.mod h1:2WXXweGCbD1Hc2tSxSeGeafwf+sGPllUOXfyre/11KE=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=

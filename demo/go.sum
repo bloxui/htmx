@@ -4,6 +4,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/plainkit/html v0.21.0 h1:TzgRiuX+PqAEt6RmaT8aZy7Zql487iWLWKvuk5tKbnM=
 github.com/plainkit/html v0.21.0/go.mod h1:DNSes45N6gz60p5jOubdsVZAwFeCl/KibO0S9fznmJg=
+github.com/plainkit/html v0.23.0 h1:q4lAp0jO2Nbquare3tt4CmYCcfLhWw5AsQID8RR6lyo=
+github.com/plainkit/html v0.23.0/go.mod h1:DNSes45N6gz60p5jOubdsVZAwFeCl/KibO0S9fznmJg=
 github.com/plainkit/htmx v0.9.0 h1:GNAsoIPOww+8CzJVVVYY/U6fM7hIjdoR1mIqlCRYqwY=
 github.com/plainkit/htmx v0.9.0/go.mod h1:6holjpr01jrqZW0k9o81Q3S4IV+uT2Ie9Zrh8x6ic2k=
 github.com/plainkit/icons v0.13.0 h1:QWot1CAmpLippuhxpZnMZ4pqjFouiFhKv7uCJgaG/hY=

@@ -214,3 +214,17 @@ func HxDisinherit(attrs string) html.Global {
 func JavaScript() []byte {
 	return js.HtmxMinJS
 }
+
+// IdiomorphJS returns the embedded idiomorph extension JavaScript content.
+// This extension provides intelligent DOM morphing for HTMX, preventing flickering
+// during updates by only changing the parts of the DOM that actually changed.
+//
+// Example usage:
+//
+//	http.HandleFunc("/js/idiomorph-ext.min.js", func(w http.ResponseWriter, r *http.Request) {
+//	    w.Header().Set("Content-Type", "application/javascript")
+//	    w.Write(htmx.IdiomorphJS())
+//	})
+func IdiomorphJS() []byte {
+	return js.IdiomorphExtMinJS
+}
